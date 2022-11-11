@@ -19,13 +19,6 @@ phases:
     commands:
       - echo building dev images...
       - docker-compose up -d --build
-      - docker-compose exec -T be python -m pytest "src/tests" -p no:warnings --cov="src"
-      - docker-compose exec -T be flake8 src
-      - docker-compose exec -T be black src --check
-      - docker-compose exec -T be isort src --check-only
-      - docker-compose exec -T fe npm run lint
-      - docker-compose exec -T fe npm run prettier:check
-      - docker-compose exec -T fe npm run prettier:write
       - echo building prod images...
       - >
         docker build \
