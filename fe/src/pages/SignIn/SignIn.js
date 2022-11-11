@@ -126,7 +126,8 @@ const SignIn = () => {
     // verify user/pwd, get encoded userid as access and refresh tokens in return
     // fetch("http://localhost:5000/login", config)
     //fetch(`${process.env.REACT_APP_BE_NETWORK}:${process.env.REACT_APP_BE_PORT}/login`, config)
-    fetch(`login`, config)
+    fetch(`${process.env.REACT_APP_API_SERVICE_URL}/login`, config)
+      // fetch(`login`, config)
       .then((response) => response.json())
       .then((data) => {
         // save to local storage
