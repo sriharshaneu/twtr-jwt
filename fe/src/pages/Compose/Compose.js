@@ -11,20 +11,20 @@ import Paper from "@material-ui/core/Paper";
 //import MenuContext from 'material-ui-shell/lib/providers/Menu/Context'
 import { Link } from "react-router-dom";
 
-const localStorageAuthKey = "twtr:auth";
-function getAccessToken() {
-  if (typeof Storage !== "undefined") {
-    try {
-      var keys = JSON.parse(localStorage.getItem(localStorageAuthKey));
-      return keys.access;
-      // the refresh token is keys.refresh
-    } catch (ex) {
-      console.log(ex);
-    }
-  } else {
-    // No web storage Support :-(
-  }
-}
+// const localStorageAuthKey = "twtr:auth";
+// function getAccessToken() {
+//   if (typeof Storage !== "undefined") {
+//     try {
+//       var keys = JSON.parse(localStorage.getItem(localStorageAuthKey));
+//       return keys.access;
+//       // the refresh token is keys.refresh
+//     } catch (ex) {
+//       console.log(ex);
+//     }
+//   } else {
+//     // No web storage Support :-(
+//   }
+// }
 
 const useStyles = makeStyles((theme) => ({
   paper: {
@@ -73,15 +73,15 @@ const Compose = () => {
 
   // async launch POST with access token
   const postTweet = async (user, description, priv, pic) => {
-    const access_token = getAccessToken();
-    console.log("access_token:");
-    console.log(access_token);
+    // const access_token = getAccessToken();
+    // console.log("access_token:");
+    // console.log(access_token);
     const paramdict = {
       user: user,
       description: description,
       private: priv,
       pic: pic,
-      "access-token": access_token,
+      "access-token": "",
     };
     console.log("postTweet paramdict:");
     console.log(paramdict);
