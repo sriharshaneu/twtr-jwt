@@ -18,7 +18,7 @@ function Home(props) {
 
   return (
     <div className={classes.root}>
-      <h1>Peri Babu's Landing page</h1>
+      <h1>Peri's Landing page</h1>
     </div>
   );
 }
